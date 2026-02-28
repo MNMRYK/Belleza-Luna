@@ -1,0 +1,495 @@
+/* =========================================
+   1. VARIABLES Y BASE (PALETA NUDE & GOLD)
+   ========================================= */
+:root {
+    --nude-claro: #fcf8f5;
+    /* Fondo suave */
+    --nude-medio: #e8d5c8;
+    /* Sombras y detalles */
+    --dorado: #c5a059;
+    /* El toque de lujo */
+    --dorado-oscuro: #a38446;
+    /* Para el hover de botones */
+    --texto-oscuro: #4a4238;
+    /* Un marrón grisáceo muy elegante */
+    --blanco: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    /* Necesitaremos esta fuente para el toque de lujo */
+    margin: 0;
+    background-color: var(--nude-claro);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. NAVEGACIÓN MINIMALISTA
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(252, 248, 245, 0.9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    /* Para que el padding no ensanche la barra */
+}
+
+/* Va en el CSS (Escritorio) */
+.menu-toggle {
+    display: none;
+    /* <--- Se esconde en el ordenador [cite: 2026-02-15] */
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dorado);
+    /* Usamos tu variable dorada */
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: var(--dorado);
+}
+
+/* CAMBIA ESTO EN EL CSS GENERAL (Escritorio) */
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--texto-oscuro);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--dorado);
+}
+
+.btn-reserva-nav {
+    border: 1px solid var(--dorado);
+    padding: 10px 20px;
+    border-radius: 2px;
+    /* Casi recto, más elegante */
+}
+
+/* =========================================
+   3. HERO (BIENVENIDA)
+   ========================================= */
+.hero-belleza {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url('https://images.pexels.com/photos/3985330/pexels-photo-3985330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.hero-overlay h1 {
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.boton-dorado {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: var(--dorado);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+.boton-dorado:hover {
+    background-color: var(--dorado-oscuro);
+    letter-spacing: 4px;
+    /* Efecto chic */
+}
+
+/* =========================================
+   3.5 SECCIÓN SOBRE NOSOTROS
+   ========================================= */
+.seccion-nosotros {
+    padding: 120px 50px;
+    background-color: var(--blanco);
+}
+
+.nosotros-flex {
+    display: flex;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 80px;
+    /* Mucho aire, mucho lujo */
+}
+
+.nosotros-texto {
+    flex: 1;
+}
+
+.nosotros-texto span {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--dorado);
+    font-size: 0.9rem;
+}
+
+.nosotros-texto h2 {
+    font-size: 3rem;
+    margin: 20px 0;
+    font-weight: 300;
+}
+
+.nosotros-texto p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cita {
+    font-style: italic;
+    border-left: 2px solid var(--dorado);
+    padding-left: 20px;
+    margin-top: 30px !important;
+}
+
+.nosotros-imagen {
+    flex: 1;
+}
+
+.nosotros-imagen img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    /* Para que la foto no se deforme */
+    box-shadow: 20px 20px 0px var(--nude-medio);
+    /* Un detalle de diseño chic */
+}
+
+/* =========================================
+   4. SECCIÓN SERVICIOS
+   ========================================= */
+.seccion-servicios {
+    padding: 100px 50px;
+    background-color: var(--nude-claro);
+}
+
+.titulo-grupo {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.titulo-grupo span {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    color: var(--dorado);
+}
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjeta-servicio {
+    background: var(--blanco);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.4s;
+    border-bottom: 3px solid transparent;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-10px);
+    border-bottom: 3px solid var(--dorado);
+}
+
+.img-servicio {
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+}
+
+.info-servicio {
+    padding: 30px;
+    text-align: center;
+}
+
+.info-servicio h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--texto-oscuro);
+}
+
+.precio-servicio {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: var(--dorado);
+}
+
+/* =========================================
+   5. SECCIÓN RESERVAS (SISTEMA FRESHA)
+   ========================================= */
+.seccion-reservas {
+    padding: 100px 20px;
+    background-color: var(--blanco);
+    text-align: center;
+}
+
+.seccion-reservas h2 {
+    font-size: 2.5rem;
+    color: var(--dorado);
+    margin-bottom: 10px;
+}
+
+.reserva-contenedor {
+    background: var(--nude-claro);
+    padding: 60px 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 40px auto 0;
+    /* 40px arriba para separarlo del h2 */
+    border: 1px solid var(--nude-medio);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.btn-fresha {
+    display: inline-block;
+    background-color: var(--texto-oscuro);
+    color: var(--blanco);
+    padding: 20px 40px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 30px 0;
+    transition: 0.4s;
+    border-radius: 2px;
+    font-family: inherit;
+}
+
+.btn-fresha:hover {
+    background-color: var(--dorado);
+    transform: scale(1.05);
+    color: white;
+}
+
+.nota-reserva {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    letter-spacing: 1px;
+    color: var(--texto-oscuro);
+}
+
+/* =========================================
+   6. SECCIÓN MAPA
+   ========================================= */
+.seccion-mapa {
+    line-height: 0;
+    transition: 0.8s ease;
+    border-top: 1px solid var(--nude-medio);
+    border-bottom: 1px solid var(--nude-medio);
+}
+
+.seccion-mapa iframe {
+    width: 100%;
+    height: 400px;
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+.footer-luna {
+    background-color: #2c2824;
+    /* El nude más oscuro, casi café */
+    color: var(--nude-claro);
+    padding: 60px 20px 20px;
+    font-family: 'Arial', sans-serif;
+    /* Fuente más legible para datos */
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-contenido h3,
+.footer-contenido h4 {
+    color: var(--dorado);
+    letter-spacing: 2px;
+}
+
+.iconos-redes a {
+    color: var(--nude-claro);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.iconos-redes a:hover {
+    color: var(--dorado);
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid rgba(232, 213, 200, 0.1);
+    padding-top: 20px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.footer-copy a {
+    color: var(--dorado);
+    text-decoration: none;
+}
+
+/* =========================================
+   8. ANIMACIONES (EL TOQUE MÁGICO)
+   ========================================= */
+/* Estado inicial: invisible y un poco más abajo */
+.seccion-nosotros,
+.seccion-servicios,
+.seccion-reservas {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+/* Estado cuando JavaScript añade la clase 'visible' */
+.seccion-nosotros.visible,
+.seccion-servicios.visible,
+.seccion-reservas.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   9. RESPONSIVE DESIGN (MÓVIL Y TABLET)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Navbar: Bajamos el logo y centramos el menú */
+    .menu-toggle {
+        display: flex;
+        /* <--- Esto hace que aparezcan las 3 rayas en móvil */
+    }
+
+    /* 1. La Navbar: Ahora el logo y el botón hamburguesa se reparten el espacio */
+    .navbar {
+        flex-direction: row;
+        /* Para que el logo y las rayas estén en la misma línea */
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    /* 2. El Menú (ul): Ahora es una "caja" escondida */
+    .nav-links {
+        display: none;
+        /* <--- ¡ESTO ES CLAVE! Lo escondemos */
+        flex-direction: column;
+        position: absolute;
+        /* Para que flote sobre el resto de la web */
+        top: 70px;
+        /* Justo debajo de la barra de navegación */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 3. El Menú cuando está ACTIVO (Lo que hará el JS) */
+    .nav-links.active {
+        display: flex;
+        /* <--- ¡ESTO LO MUESTRA! */
+    }
+
+    .boton-reserva {
+        width: 100%;
+        /* El botón de reserva ocupará todo el ancho */
+        text-align: center;
+    }
+
+    /* Hero: Bajamos el tamaño de la letra para que no se corte */
+    .hero-overlay h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Sobre Nosotros: Dejamos de usar flex (columnas) y ponemos una debajo de otra */
+    .nosotros-flex {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .nosotros-imagen img {
+        height: 300px;
+        box-shadow: 10px 10px 0px var(--nude-medio);
+        /* Sombra más pequeña */
+    }
+
+    .nosotros-texto h2 {
+        font-size: 2rem;
+    }
+
+    /* Servicios: Ya lo tenemos con 'auto-fit', así que casi se arregla solo, 
+       pero bajamos el padding de la sección */
+    .seccion-servicios {
+        padding: 60px 20px;
+    }
+
+    /* Reservas: Hacemos el contenedor más ancho para aprovechar el móvil */
+    .reserva-contenedor {
+        padding: 40px 20px;
+        margin: 20px 10px;
+    }
+
+    .btn-fresha {
+        padding: 15px 25px;
+        font-size: 0.9rem;
+    }
+}
